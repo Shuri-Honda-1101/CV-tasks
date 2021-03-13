@@ -1,0 +1,68 @@
+JSXとは？
+    JSX
+        Facebook社が開発したJavaScriptの拡張構文
+        jsファイル上でほぼHTMLと同じ記述ができる
+    必須ではないが非常に便利
+        HTMLが使えれば直感的に理解しやすいソースコード
+        js飲みでも実装できるが、非常に見にくい
+
+JSXとHTMLの違い
+    ・HTML5のタグは全て使える
+    ・カスタムコンポーネントをタグ名として使える
+    ・使えない属性
+        class,forはJavascriptでも使うため属性として使用できない。
+            class → className
+            for → htmlFor
+    ・プロパティ名がキャメルケースのオブジェクトを属性値として渡せる
+        <div style= {styles} >...</div>
+    ・動的な値を埋め込める
+        const text = '質問'
+        return (
+            <div className="driver">
+                <h2>{text}</h2>
+            </div>
+        )
+    ・renderのreturnに入れるコンポーネントは一つだけ。
+        NG
+            <h1></h1>
+            <p></p>
+        OK
+            <div>
+                <h1></h1>
+                <p></p>
+            </div>
+    ・imgやaタグにも閉じタグ</>が必要
+        最後に / を書くだけでもOK
+        <img src=... />
+    ・コンポーネント内で読み込む画像データはpublicフォルダに入れないとうまく読み込まれない
+        CSSで読み込むときはsrcフォルダに格納しなければならない
+    
+    
+
+コンポーネントとは？
+    Component
+        再利用可能なUI部品
+            UI → Webサービスにおいてユーザーの目に触れる部分全て
+    
+    メリット
+        部品化することでさまざまなところで再利用できる
+        出来上がっているコンポーネントを当てはめるだけ
+        コードの記述量が減る
+        効率よくフロントエンド開発が行える
+
+    種類
+        Class Component
+            state, props, lifecycle　などの状態を付加できる
+        Functional Component
+            Class　Componentより見通しがいいコードになる
+            propsのみ、余計な情報を付加させない
+            が、
+            React Hooks
+                最近出てきた。
+                state, lifecycleなどを付加できるようになった
+                そのため、最近はこちらを使ったFunctional Componentが主流
+
+Semantec-UI
+    CSSフレームワーク
+    指定されたクラス名を記述
+    CSSを記述せずに綺麗なUIを作成できる
